@@ -1,9 +1,9 @@
 #Take inputs for personal finance calculator
-income = int(input("Enter your monthly income: "))
-expense = int(input("Enter your total monthly expenses: "))
+monthly_income = float(input("Enter your monthly income: "))
+monthly_expenses = float(input("Enter your total monthly expenses: "))
 
 #now we calculate the monthly savings of the user
-monthly_savings = income - expense
+monthly_savings = monthly_income - monthly_expenses
 print(f"Your monthly savings are ${monthly_savings}")
 
 #now we work on annual savings assuming interest is 5% per year
