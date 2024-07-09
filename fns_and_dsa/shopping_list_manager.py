@@ -9,28 +9,31 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = int(input("Enter your choice: "))
+        choice = input("Enter your choice: ")
 
-        if choice == 1:
-            add_item = input("Enter what you want to add: ")
-            shopping_list.append(add_item)
-            print(f"{add_item} was added to the list")
-            pass
-        elif choice == 2:
-            remove_item = input("Select item to remove: ")
-            # Prompt for and remove an item
-            if remove_item in shopping_list:
-                shopping_list.remove(remove_item)
-                print(f"{remove_item} was removed from the list")
+        if choice == '1':
+            item = input("Enter the item to add: ")
+            shopping_list.append(item)
+            print(f"Added '{item}' to the list.")
+        elif choice == '2':
+            item = input("Enter the item to remove: ")
+            if item in shopping_list:
+                shopping_list.remove(item)
+                print(f"Removed '{item}' from the list.")
             else:
-                print(f"{remove_item} not found in list")
-                pass
-        elif choice == 3:
-            for i in shopping_list:
-                print(i)
-            pass
-        elif choice == 4:
+                print(f"'{item}' not found in the list.")
+        elif choice == '3':
+            if shopping_list:
+                print("Current Shopping List:")
+                for i, item in enumerate(shopping_list, 1):
+                    print(f"{i}. {item}")
+            else:
+                print("The shopping list is empty.")
+        elif choice == '4':
             print("Goodbye!")
             break
         else:
             print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
