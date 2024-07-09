@@ -27,7 +27,7 @@ def main():
                 pass
         elif choice == '3':
             for i in shopping_list:
-                print(i) 
+                print(i)
             pass
         elif choice == '4':
             print("Goodbye!")
